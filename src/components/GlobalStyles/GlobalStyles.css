@@ -31,8 +31,9 @@
     display: block;
 }
 .bg-auth{
-    background-image: linear-gradient(to right bottom , #275852, #020202, #471926);
+    background-image: linear-gradient(to right bottom , #275852, #773636, #471926);
     background-size: cover;
+    height: 100vh;
 }
 .text-decoration-none{
     text-decoration: none !important;

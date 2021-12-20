@@ -10,7 +10,7 @@ import bannerCard3 from "../../../assets/banner_card3.png"
 
 export default function Banner03() {
     return (
-        <div>
+        <>
             <div className='banner-step d-flex justify-content-center mb-5'>
                 <img src={bannerStep}/>
             </div>
@@ -20,7 +20,7 @@ export default function Banner03() {
                         Bước 1: Nhập Tên
                     </h2>
                     <h5 className='section-desc'><span>Điền tên trên thẻ, đặt mua</span> và thanh toán</h5>
-                    <Button variant="primary">Đặt mua</Button>
+                    <button className='btn btn-primary'>Đặt mua</button>
                 </div>
                 <img src={bannerCard} className='step-card-img mt-5'/>
             </div>
@@ -60,6 +60,6 @@ export default function Banner03() {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
