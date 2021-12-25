@@ -1,0 +1,18 @@
+.img-info-scan{
+    height: 650px;
+    object-fit: cover;
+}
+.scanned-name{
+    position: absolute;
+    top: 111px;
+    left: 154px;
+}
+.scanned-avatar{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: 111px;
+    left: 33px;
+}

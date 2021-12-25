@@ -9,6 +9,7 @@ import Banner02 from './components/HomePage/Banner/Banner02';
 import Banner03 from './components/HomePage/Banner/Banner03';
 import Banner04 from './components/HomePage/Banner/Banner04';
 import HomePage from './components/HomePage/HomePage';
+import InforScan from './components/InforScan/InforScan';
 import NavBar from './components/NavBar/NavBar';
 import AuthContext from './context/auth';
 import LandingPage from './LandingPage/LandingPage';
@@ -87,6 +88,7 @@ function App() {
               <Route path="/huong-dan" element={<Banner03/>}/>
               <Route path="/chuc-nang" element={<Banner03/>}/>
               <Route path="/tao-the" element={<RequireAuth mode="navigate"><Banner04/></RequireAuth>}/>
+              <Route path="/thong-tin-scan" element={<RequireAuth mode="navigate"><InforScan/></RequireAuth>} />
               <Route path="/login" element={ <Login/>}/>
             </Routes>
             <Footer/>

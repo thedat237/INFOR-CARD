@@ -35,7 +35,7 @@ export default function NavBar() {
                                 <Link to="/chuc-nang" className="header-menu-link text-decoration-none fw-bold fs-6">Chức năng</Link>
                             </li>
                             <li class="header-menu-item">
-                                <NavLink to="/" className="header-menu-link text-decoration-none fw-bold fs-6">Thẻ RGB</NavLink>
+                                <Link to="/thong-tin-scan" className="header-menu-link text-decoration-none fw-bold fs-6">Thông tin thẻ</Link>
                             </li>
                         </ul>
                         
