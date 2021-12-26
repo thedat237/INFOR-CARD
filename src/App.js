@@ -1,7 +1,8 @@
 import React ,{ useEffect, useState } from 'react';
-import { Link, Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './components/Auth/Login';
+import Register from './components/Auth/Register';
 import RequireAuth from './components/Auth/RequireAuth';
 import Footer from './components/Footer/Footer';
 import GlobalStyles from './components/GlobalStyles';
@@ -12,8 +13,8 @@ import HomePage from './components/HomePage/HomePage';
 import InforScan from './components/InforScan/InforScan';
 import NavBar from './components/NavBar/NavBar';
 import AuthContext from './context/auth';
-import LandingPage from './LandingPage/LandingPage';
-import QRcode from './QR code/QRcode';
+// import LandingPage from './LandingPage/LandingPage';
+// import QRcode from './QR code/QRcode';
 import axios, { addJwt } from "./util/http"
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
       setCheckingAuthUserDone(true);
       return
     }
-    axios.get("/me", {
+    axios.get("/auth/me", {
       headers: {
         Authorization: `Bearer ${token}`,
       }
@@ -89,7 +90,8 @@ function App() {
               <Route path="/chuc-nang" element={<Banner03/>}/>
               <Route path="/tao-the" element={<RequireAuth mode="navigate"><Banner04/></RequireAuth>}/>
               <Route path="/thong-tin-scan" element={<RequireAuth mode="navigate"><InforScan/></RequireAuth>} />
-              <Route path="/login" element={ <Login/>}/>
+              <Route path="/login" element={ <Login />}/>
+              <Route path='/register' element={<Register />} />
             </Routes>
             <Footer/>
         </AuthContext.Provider>

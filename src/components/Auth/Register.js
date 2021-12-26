@@ -1,34 +1,38 @@
-import { useState, useContext } from 'react'
-import "./Login.css"
-import bannerPeople from "../../assets/banner_people_card.jfif"
-import axios, { addJwt } from "../../util/http"
-import AuthContext from '../../context/auth'
-import { Navigate } from 'react-router-dom'
+import { useState } from "react"
+import axios from "../../util/http"
+import { useNavigate } from "react-router-dom"
+import bannerPeople from '../../assets/banner_people_card.jfif'
 
-export default function Login(props) {
+const Register = () => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const authCtx = useContext(AuthContext)
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
-    const onLoginSubmit = async (e) => {
+    const onRegisterSubmit = async e => {
         e.preventDefault()
-        try{
-            const response = await axios.post("/auth/login", {
-                username: username,
-                password: password
-            })
-            authCtx.setUser(response.data.user)
-            localStorage.setItem("token", response.data.token)
-            addJwt(response.data.token)
-        } catch (err) {
-            alert("Wrong username or password")
-        }
+        await axios.post('/auth/register', {
+            username: username,
+            password: password
+        })
+        // console.log(res);
+        navigate('/login')
     }
 
-    if(authCtx.user) {
-        return <Navigate to="/tao-the" replace={true} />
-    }
+    // const onLoginSubmit = async (e) => {
+    //     e.preventDefault()
+    //     try{
+    //         const response = await axios.post("/login", {
+    //             username: username,
+    //             password: password
+    //         })
+    //         authCtx.setUser(response.data.user)
+    //         localStorage.setItem("token", response.data.token)
+    //         addJwt(response.data.token)
+    //     } catch (err) {
+    //         alert("Wrong username or password")
+    //     }
+    // }
+
 
     return (
         <div className='bg-auth'>
@@ -39,40 +43,38 @@ export default function Login(props) {
                             <img src={bannerPeople} className='img-fluid login-img' alt='banner'/>
                         </div>
                         <div className='col-lg-7 mt-3'>
-                            <h1 className='fw-bold py-3'>Login</h1>
-                            <h4>Sign into your account</h4>
-                            <form className='my-5' onSubmit={onLoginSubmit}> 
+                            <h1 className='fw-bold py-3'>Register</h1>
+                            <h4>Register your account</h4>
+                            <form className='my-5' onSubmit={onRegisterSubmit}> 
                                 <div className='form-row'>
                                     <div className='col-lg-7'>
                                         <input  
                                             placeholder='Email-Address'
                                             className='form-control my-3 p-3'
                                             value={username}
-                                            autoComplete='current-pasword'
-                                            onChange={(e) =>{
-                                                setUsername(e.target.value)}}
+                                            onChange={e => setUsername(e.target.value)}
                                         />
                                     </div>
                                 </div>
                                 <div className='form-row mb-5'>
                                     <div className='col-lg-7'>
-                                        <input 
-                                            type="password" 
-                                            placeholder='password' 
+                                        <input type="password" 
+                                            placeholder='******' 
                                             className='form-control my-3 p-3'
                                             value={password}
-                                            onChange={e => setPassword(e.target.value)}
+                                            onChange={(e) =>{
+                                                setPassword(e.target.value)}}
                                         />
                                     </div>
                                 </div>
                                 <div className='form-row'>
                                     <div className='col-lg-7'>
                                         <button className='btn1'>
-                                            Login
+                                            Register
                                         </button>
                                     </div>
                                 </div>
-                                <p>Dont't have an account? <a href='/register'>Register here</a></p>
+                                <p>Do you already have an account? <a href='/login'>Login here</a></p>
                             </form>
                         </div>
                     </div>
@@ -81,3 +83,5 @@ export default function Login(props) {
         </div>
     )
 }
+
+export default Register

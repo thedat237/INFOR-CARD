@@ -17,8 +17,8 @@ export default function Banner01() {
                             <Button variant="primary">Đặt mua</Button>
                         </div>
                         <div className='d-flex justify-content-between banner-img'>
-                            <img src={bannerPhone} className='phone-img'/>
-                            <img src={bannerCard4} className='card-image'/>
+                            <img src={bannerPhone} className='phone-img' alt='banner'/>
+                            <img src={bannerCard4} className='card-image' alt='banner'/>
                         </div>
                     </div>
                 </div>

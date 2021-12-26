@@ -7,8 +7,8 @@ export default function InforScan(props) {
     return (
         <div className='d-flex justify-content-center align-items-center'>
             <div className='position-relative'>
-                <img src={BannerInfoScan1} className="img-info-scan"/>
-                <img src={avatar} className='scanned-avatar'/>
+                <img src={BannerInfoScan1} className="img-info-scan" alt='banner_scan'/>
+                <img src={avatar} className='scanned-avatar' alt='avatar'/>
                 <h4 className='scanned-name text-white'>{name}</h4>
                 <p className='scanned-date'>{date}</p>
             </div>

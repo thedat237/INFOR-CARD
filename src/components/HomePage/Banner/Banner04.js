@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import "./Banner04.css"
 import cardType from '../../../data/dataCard'
 import InforScan from '../../InforScan/InforScan'
 import QRCode from "qrcode.react"
-import logoScan from "../../../assets/logo_scan.png"
+// import logoScan from "../../../assets/logo_scan.png"
 
 export default function Banner04() {
     const [selectedImg, setSelectedImg] = useState(cardType[0].src)
@@ -15,6 +16,8 @@ export default function Banner04() {
     })
     const [imageUrlAvatar, setImageUrlAvatar] = useState()
     const [imageQRcode, setImageQRcode] = useState("")
+    const params = useParams()
+    // console.log(params);
 
     const onChangeInput = (e) => {
         const newValueInput = e.target.value;
@@ -60,7 +63,7 @@ export default function Banner04() {
                 </div>
                 <div className='d-flex gap-5'>
                     <div className='demo-card'>
-                        <img src={selectedImg} className='demo-card-img'/>
+                        <img src={selectedImg} className='demo-card-img' alt='selected img'/>
                         {/* <img src={imageQRcode} className="demo-card-qr"/> */}
                         <QRCode 
                             className="demo-card-qr"  
@@ -92,11 +95,15 @@ export default function Banner04() {
                                 <span>Màu sắc:</span>
                                 <div className='d-flex'>
                                     {cardType.map((img, index) => (
-                                        <div className='cursor-pointer card-type'>
-                                            <img key={index} 
-                                                src={img.src} className='card-demo-luxury ms-3'
-                                                onClick={() => {setSelectedImg(img.src)
-                                                    setSelectedNameCard(img.name)}}
+                                        <div className='cursor-pointer card-type' key={index}>
+                                            <img 
+                                                src={img.src} 
+                                                className='card-demo-luxury ms-3'
+                                                onClick={() => {
+                                                    setSelectedImg(img.src)
+                                                    setSelectedNameCard(img.name)
+                                                }}
+                                                alt='img'
                                             />
                                         </div>
                                     ))}

@@ -12,7 +12,7 @@ export default function Footer() {
                     </h2>
                     <h6 className='text-white fw-bold'>Theo dõi chúng tôi tại</h6>
                     <a href='/'>
-                        <img src={fb} className="fb-img"/>
+                        <img src={fb} className="fb-img" alt='fb'/>
                     </a>
                     <p className='section-desc fw-bold text-white mt-3'><span>dat9d3@gmail.com</span><span>©2021 InforCard</span></p>
 
