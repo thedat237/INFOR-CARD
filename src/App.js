@@ -88,6 +88,7 @@ function App() {
               <Route path="/gioi-thieu" element={<Banner02/>}/>
               <Route path="/huong-dan" element={<Banner03/>}/>
               <Route path="/chuc-nang" element={<Banner03/>}/>
+              <Route path="/#" element={<Banner04/>}/>
               <Route path="/tao-the" element={<RequireAuth mode="navigate"><Banner04/></RequireAuth>}/>
               <Route path="/thong-tin-scan" element={<RequireAuth mode="navigate"><InforScan/></RequireAuth>} />
               <Route path="/login" element={ <Login />}/>

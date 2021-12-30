@@ -3,13 +3,22 @@
 }
 .step-card-img{
     transform: translateX(50px);
-    width: 600px;
+    width: 60%;
+    height: 60%;
 }
-.step-infor{
-    width: 45%;
+.step-info{
+    width: 60%;
+    height: 60%;
 }
+
 .step-phone-img{
     width: 200px;
+}
+
+@media screen and (max-width: 768) {
+    .step-phone-img{
+    width: 200px;
+}
 }
 /* .step-phone-img:not(:first-child){
     margin-left: 50px;

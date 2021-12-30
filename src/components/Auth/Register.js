@@ -35,29 +35,30 @@ const Register = () => {
 
 
     return (
-        <div className='bg-auth'>
-            <section className='Form'>
-                <div className='container py-3'>
-                    <div className='row '>
-                        <div className='col-lg-5 p-0'>
-                            <img src={bannerPeople} className='img-fluid login-img' alt='banner'/>
+        <div className='bg-dark'>
+            <section className='form'>
+                <div className='container py-4'>
+                    <div className='form-login fluid row p-0'>
+                        <div className='col-lg-5 p-3'>
+                            <img src={bannerPeople} className='login-img'/>
                         </div>
                         <div className='col-lg-7 mt-3'>
                             <h1 className='fw-bold py-3'>Register</h1>
                             <h4>Register your account</h4>
                             <form className='my-5' onSubmit={onRegisterSubmit}> 
                                 <div className='form-row'>
-                                    <div className='col-lg-7'>
+                                    <div className='col-lg-10'>
                                         <input  
                                             placeholder='Email-Address'
                                             className='form-control my-3 p-3'
                                             value={username}
-                                            onChange={e => setUsername(e.target.value)}
+                                            onChange={(e) =>{
+                                                setUsername(e.target.value)}}
                                         />
                                     </div>
                                 </div>
                                 <div className='form-row mb-5'>
-                                    <div className='col-lg-7'>
+                                    <div className='col-lg-10'>
                                         <input type="password" 
                                             placeholder='******' 
                                             className='form-control my-3 p-3'
@@ -68,7 +69,7 @@ const Register = () => {
                                     </div>
                                 </div>
                                 <div className='form-row'>
-                                    <div className='col-lg-7'>
+                                    <div className='col-lg-10'>
                                         <button className='btn1'>
                                             Register
                                         </button>

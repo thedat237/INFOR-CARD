@@ -1,8 +1,9 @@
 .section1-img{
     width: 55%;
+    height: 75%;
     transform: translateX(-50px);
     border-radius: 16px;
 }
-.section1-infor{
+.section1-info{
     width: 45%;
 }
